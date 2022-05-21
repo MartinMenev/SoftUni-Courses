@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class P07VendingMachine {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        double totalMoney = 0;
+        while (!input.equals("Start")) {
+            double coin = Double.parseDouble(input);
+            totalMoney += coin;
+            if (coin != 0.1 && coin != 0.2 && coin != 0.5 && coin != 1 && coin != 2) {
+                System.out.printf("Cannot accept %.2f%n", coin);
+                totalMoney -= coin;
+            }
+            input = scanner.nextLine();
+        }
+        input = scanner.nextLine();
+
+        while (!input.equals("End")) {
+            String product = input;
+            double price = 0;
+            boolean isValid = true;
+            switch (product) {
+                case "Nuts":
+                    price = 2.0;
+                    break;
+                case "Water":
+                    price = 0.7;
+                    break;
+                case "Crisps":
+                    price = 1.5;
+                    break;
+                case "Soda":
+                    price = 0.8;
+                    break;
+                case "Coke":
+                    price = 1.0;
+                    break;
+                default:
+                    System.out.println("Invalid product");
+                    isValid = false;
+                    break;
+            }
+            totalMoney -= price;
+            if (totalMoney < 0) {
+                totalMoney += price;
+                System.out.println("Sorry, not enough money");
+                isValid = false;
+            }
+            if (isValid) {
+                System.out.printf("Purchased %s%n", product);
+            }
+
+            input = scanner.nextLine();
+        }
+        System.out.printf("Change: %.2f", totalMoney);
+    }
+}
