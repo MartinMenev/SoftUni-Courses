@@ -29,7 +29,7 @@ public class CountCharacterTypes {
                     vowelsCount++;
                 } else if (punctuation.contains(symbol)) {
                     punctuationCount++;
-                } else if (symbol != 32) {
+                } else if (!Character.isWhitespace(symbol)) {
                     consonantsCount++;
                 }
             }
