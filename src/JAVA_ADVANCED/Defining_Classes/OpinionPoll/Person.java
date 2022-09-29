@@ -1,8 +1,8 @@
 package JAVA_ADVANCED.Defining_Classes.OpinionPoll;
 
 public class Person {
-    String name;
-    int age;
+    private final String name;
+    private final int age;
 
     public Person(String name, int age) {
         this.name = name;
