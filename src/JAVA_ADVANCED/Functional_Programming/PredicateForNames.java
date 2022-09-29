@@ -1,5 +1,6 @@
 package JAVA_ADVANCED.Functional_Programming;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
@@ -13,10 +14,7 @@ public class PredicateForNames {
 
         Predicate<String> isLessOrEqual = s -> s.length() <= namesLength;
 
-        for (String name : names) {
-            if (isLessOrEqual.test(name)) {
-                System.out.println(name);
-            }
-        }
+        Arrays.stream(names).filter(isLessOrEqual).forEach(System.out::println);
+
     }
 }
