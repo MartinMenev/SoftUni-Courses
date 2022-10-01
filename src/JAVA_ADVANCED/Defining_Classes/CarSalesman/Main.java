@@ -43,9 +43,9 @@ public class Main {
             String[] line = scanner.nextLine().split("\\s+");
             String carModel = line[0];
             String engineModel = line[1];
-            Map<String, Engine> currentMap = new HashMap<>();
-            currentMap.put(carModel, engineMap.get(engineModel));
-            Car car = new Car(carModel, currentMap);
+
+
+            Car car = new Car(carModel, engineMap.get(engineModel));
 
             if (line.length >= 3) {
                 char symbol = line[2].charAt(0);
