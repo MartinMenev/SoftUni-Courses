@@ -4,13 +4,13 @@ import java.util.Map;
 
 public class Car {
     private String model;
-    private Map<String, Engine> engineMap;
+    private Engine engine;
     private String weight = "n/a";
     private String color = "n/a";
 
-    public Car(String model, Map<String, Engine> engineMap) {
+    public Car(String model, Engine engine) {
         this.model = model;
-        this.engineMap = engineMap;
+        this.engine = engine;
     }
 
     public String getModel() {
@@ -35,13 +35,11 @@ public class Car {
         return color;
     }
 
-    public Map<String, Engine> getEngineMap() {
-        return engineMap;
+    public Engine getEngine() {
+        return engine;
     }
 
-    public void setEngineMap(Map<String, Engine> engineMap) {
-        this.engineMap = engineMap;
-    }
+
 
     public void setColor(String color) {
         this.color = color;
@@ -51,7 +49,7 @@ public class Car {
     public String toString() {
         return String.format(
                 "%s:\n%s:\nPower: %d\nDisplacement: %s\nEfficiency: %s\nWeight: %s\nColor: %s",
-                getModel(), getEngineMap().get(getModel()).getEngineModel(), getEngineMap().get(getModel()).getPower(), getEngineMap().get(getModel()).getDisplacement(),
-                getEngineMap().get(getModel()).getEfficiency(), weight, color);
+                getModel(), getEngine().getEngineModel(), getEngine().getPower(), getEngine().getDisplacement(),
+                getEngine().getEfficiency(), weight, color);
     }
 }
