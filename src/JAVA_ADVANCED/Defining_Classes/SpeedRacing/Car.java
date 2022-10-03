@@ -16,8 +16,8 @@ public class Car {
 
        if(fuelAmount < fuelCostPerKm * distance) return false;
 
-       fuelAmount -= fuelCostPerKm * distance;
-        distanceTravelled += distance;
+       this.fuelAmount -= fuelCostPerKm * distance;
+        this.distanceTravelled += distance;
         return true;
     }
 
