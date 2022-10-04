@@ -63,6 +63,6 @@ public class Main {
         return employees
                 .stream().filter(getDept)
                 .mapToDouble(Employee::getSalary)
-                .average().orElse(0d);
+                .average().orElse(0);
     }
 }
