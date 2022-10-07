@@ -61,4 +61,73 @@ public class MaximalSum {
             System.out.println();
         }
     }
+
+    public static class ParkingSystem {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String[] input = scanner.nextLine().split("\\s+");
+            int row = Integer.parseInt(input[0]);
+            int col = Integer.parseInt(input[1]);
+
+            int[][] parking = new int[row][col];
+
+            String command = scanner.nextLine();
+
+            while (!command.equals("stop")) {
+                String[] nextLine = command.split("\\s+");
+                int entryRow = Integer.parseInt(nextLine[0]);
+                int desiredRow = Integer.parseInt(nextLine[1]);
+                int desiredCol = Integer.parseInt(nextLine[2]);
+                boolean hasParked = false;
+                int distance = 1;
+
+                int currentCol = 0;
+
+                distance = Math.abs(entryRow - desiredRow) + 1;
+
+
+                distance += desiredCol;
+
+                if (parking[desiredRow][desiredCol] == 0) {
+                    parking[desiredRow][desiredCol] = 1;
+                    System.out.println(distance);
+                    hasParked = true;
+                } else {
+                    hasParked = isHasParked(col, parking, desiredRow, desiredCol, hasParked, distance);
+                }
+
+                if (!hasParked) {
+                    System.out.printf("Row %d full%n", desiredRow);
+                }
+                command = scanner.nextLine();
+            }
+        }
+
+        private static boolean isHasParked(int col, int[][] parking, int desiredRow, int desiredCol, boolean hasParked, int distance) {
+            for (int i = 1; i < col; i++) {
+                if (isBound(desiredCol - i, col)) {
+                    if (parking[desiredRow][desiredCol - i] == 0) {
+                        parking[desiredRow][desiredCol - i] = 1;
+                        distance -= i;
+                        System.out.println(distance);
+                        hasParked = true;
+                        break;
+                    } else if (isBound(desiredCol + i, col)) {
+                        if (parking[desiredRow][desiredCol + i] == 0) {
+                            parking[desiredRow][desiredCol + i] = 1;
+                            distance += i;
+                            System.out.println(distance);
+                            hasParked = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return hasParked;
+        }
+
+        private static boolean isBound(int i, int col) {
+            return i >= 1 && i < col;
+        }
+    }
 }

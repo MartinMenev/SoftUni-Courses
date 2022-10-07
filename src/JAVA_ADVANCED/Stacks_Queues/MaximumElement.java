@@ -20,9 +20,11 @@ public class MaximumElement {
 
 
             switch (tokens[0]) {
-                case 1 -> stack.push(tokens[1]);
-                case 2 -> stack.pop();
-                case 3 -> System.out.println(max(stack));
+                case 1: stack.push(tokens[1]);
+                break;
+                case 2: stack.pop();
+                break;
+                case 3: System.out.println(max(stack));
             }
         }
     }

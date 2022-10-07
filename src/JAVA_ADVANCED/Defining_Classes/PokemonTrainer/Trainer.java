@@ -24,13 +24,14 @@ public class Trainer {
                     break;
                 }
             }
+
             if (!isFound) {
                 for (Pokemon pokemon : getPokemonList()) {
                     pokemon.setHealth(pokemon.getHealth() - 10);
                     if (pokemon.getHealth() <= 0) {
                         pokemonList.remove(pokemon);
-                        if (getPokemonList().isEmpty())
-                            break;
+                        if (pokemonList.isEmpty())
+                           return;
                     }
                 }
             }
