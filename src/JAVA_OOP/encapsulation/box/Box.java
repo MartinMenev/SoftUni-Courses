@@ -30,15 +30,6 @@ public class Box {
         } else throw new IllegalArgumentException("Height cannot be zero or negative.");
     }
 
-//    private boolean negativeValue(String name, double value) {
-//        if (value <= 0) {
-//            System.out.println(name + " cannot be zero or negative.");
-//            negativeEntry = true;
-//            return true;
-//        }
-//        return false;
-//    }
-
     public double calculateSurfaceArea() {
             return 2 * length * width + 2 * length * height + 2 * width * height;
     }
