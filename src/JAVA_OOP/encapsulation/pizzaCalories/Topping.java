@@ -1,4 +1,6 @@
-package pizzaCalories;
+package JAVA_OOP.encapsulation.pizzaCalories;
+
+import java.util.Arrays;
 
 public class Topping {
     private String toppingType;
