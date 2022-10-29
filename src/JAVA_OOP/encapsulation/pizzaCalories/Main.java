@@ -9,21 +9,16 @@ public class Main {
         String[] pizzaData = scanner.nextLine().split("\\s+");
         String name = pizzaData[1];
         int numberOfToppings = Integer.parseInt(pizzaData[2]);
+        String[] doughData = scanner.nextLine().split("\\s+");
+        String type = doughData[1];
+        String technique = doughData[2];
+        double doughWeight = Double.parseDouble(doughData[3]);
+
 
         try {
             Pizza myPizza = new Pizza(name, numberOfToppings);
-
-            String[] doughData = scanner.nextLine().split("\\s+");
-            String type = doughData[1];
-            String technique = doughData[2];
-            double doughWeight = Double.parseDouble(doughData[3]);
-
-            try {
-                Dough dough = new Dough(type, technique, doughWeight);
-            } catch (IllegalStateException e) {
-                System.out.println(e.getMessage());
-                return;
-            }
+            Dough dough = new Dough(type, technique, doughWeight);
+            myPizza.setDough(dough);
 
             String nextLine = scanner.nextLine();
 
