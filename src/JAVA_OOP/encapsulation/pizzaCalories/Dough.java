@@ -1,4 +1,4 @@
-package pizzaCalories;
+package JAVA_OOP.encapsulation.pizzaCalories;
 
 public class Dough {
     private String flourType;
