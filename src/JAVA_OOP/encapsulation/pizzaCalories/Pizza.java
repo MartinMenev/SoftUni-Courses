@@ -1,4 +1,4 @@
-package pizzaCalories;
+package JAVA_OOP.encapsulation.pizzaCalories;
 
 import java.util.ArrayList;
 import java.util.List;
