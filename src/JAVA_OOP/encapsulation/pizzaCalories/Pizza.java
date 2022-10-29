@@ -11,6 +11,7 @@ public class Pizza {
     public Pizza(String name, int numberOfToppings) {
         this.setName(name);
         this.setToppings(numberOfToppings);
+        this.setDough(dough);
     }
 
     private void setName(String name) {
