@@ -26,13 +26,10 @@ public class Main {
                 String toppingType = nextLine.split("\\s+")[1];
                 double toppingWeight = Double.parseDouble(nextLine.split("\\s+")[2]);
 
-                try {
+
                     Topping topping = new Topping(toppingType, toppingWeight);
                     myPizza.addTopping(topping);
-                } catch (IllegalStateException e) {
-                    System.out.println(e.getMessage());
-                    return;
-                }
+
 
                 nextLine = scanner.nextLine();
             }
