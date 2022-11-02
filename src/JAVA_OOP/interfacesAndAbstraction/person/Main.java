@@ -1,4 +1,4 @@
-package JAVA_OOP.InterfacesAndAbstraction.personInterface;
+package JAVA_OOP.interfacesAndAbstraction.person;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
