@@ -1,6 +1,6 @@
 package JAVA_OOP.inheritance.animals;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private String gender;
@@ -44,9 +44,7 @@ public class Animal {
         return gender;
     }
 
-    public String produceSound() {
-        return null;
-    }
+    public abstract String produceSound();
 
     @Override
     public String toString() {
