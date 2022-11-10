@@ -4,14 +4,16 @@ import java.text.DecimalFormat;
 
 public class Truck extends Vehicle {
 
+    public final static double AC_ADDITIONAL_CONSUMPTION = 1.6;
+
     public Truck(double fuelQuantity, double fuelConsumption) {
-        super(fuelQuantity, fuelConsumption);
+        super(fuelQuantity, fuelConsumption + AC_ADDITIONAL_CONSUMPTION);
     }
 
     @Override
     String drive(double distance) {
-        if (fuelQuantity >= distance * (fuelConsumption + 1.6)) {
-        fuelQuantity -= distance * (fuelConsumption + 1.6);
+        if (fuelQuantity >= distance * fuelConsumption) {
+        fuelQuantity -= distance * fuelConsumption;
         DecimalFormat df = new DecimalFormat("###.##");
         return String.format("Truck travelled %s km", df.format(distance));
     }
