@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 public class Truck extends Vehicle {
 
     public final static double AC_ADDITIONAL_CONSUMPTION = 1.6;
+    public final static double FUEL_AFTER_LOSES = 0.95;
 
     public Truck(double fuelQuantity, double fuelConsumption) {
         super(fuelQuantity, fuelConsumption + AC_ADDITIONAL_CONSUMPTION);
@@ -22,6 +23,6 @@ public class Truck extends Vehicle {
 
     @Override
     void refuel(double liters) {
-        this.fuelQuantity += liters * 0.95;
+        this.fuelQuantity += liters * FUEL_AFTER_LOSES;
     }
 }
